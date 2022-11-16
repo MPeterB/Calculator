@@ -1,0 +1,29 @@
+{
+  "name": "calculator-server",
+  "version": "1.0.0",
+  "description": "the server side of the calculator application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js",
+    "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
+  },
+  "author": "Peter Mozsi",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pino": "^8.7.0",
+    "pino-pretty": "^9.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
+  },
+  "type": "module"
+}

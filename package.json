@@ -1,0 +1,15 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "This is a calculator application, where one can add, subtract, multiply and divide.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MPeterB/Calculator.git"
+  },
+  "author": "Peter Mozsi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MPeterB/Calculator/issues"
+  },
+  "homepage": "https://github.com/MPeterB/Calculator#readme"
+}

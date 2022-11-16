@@ -1,0 +1,13 @@
+{
+  "eslint.workingDirectories": ["src", "test"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.validate.enable": false,
+  "javascript.validate.enable": false,
+  "emmet.optimizeStylesheetParsing": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "files.eol": "\n"
+}
