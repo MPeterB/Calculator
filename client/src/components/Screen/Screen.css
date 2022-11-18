@@ -1,0 +1,14 @@
+.screen {
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+.screen div {
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

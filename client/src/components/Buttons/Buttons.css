@@ -1,0 +1,101 @@
+.buttons {
+  margin-top: 5px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas: 'save save read read'
+                       'one two three removeLast'
+                       'four five six equal'
+                       'seven eight nine equal'
+                       'point zeroButton clear equal'
+                       'plus minus multiplyButton divide';
+}
+
+.buttons button {
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-inline: 2px;
+  margin-block: 2px;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.zeroButton {
+  grid-area: zeroButton;
+}
+
+.point {
+  grid-area: point;
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.multiplyButton {
+  grid-area: multiplyButton;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.removeLast {
+  grid-area: removeLast;
+}
+
+.save {
+  grid-area: save;
+}
+
+.read {
+  grid-area: read
+}
