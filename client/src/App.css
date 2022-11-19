@@ -2,4 +2,5 @@
   text-align: center;
   display: grid;
   place-items: center;
+  background-color: hsla(212, 59%, 76%, 0.788);
 }

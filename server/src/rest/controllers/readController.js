@@ -6,7 +6,7 @@ const get = async (req, res) => {
     if (calculation) return res.status(200).json(calculation);
     throw error;
   } catch (error) {
-    res.status(400).json({ message: 'something went wrong, try again later' });
+    res.status(400).json({ message: 'Something went wrong, try again later!' });
   }
 };
 

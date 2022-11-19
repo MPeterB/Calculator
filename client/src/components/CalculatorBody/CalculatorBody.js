@@ -1,27 +1,32 @@
 import './CalculatorBody.css';
 import {useState} from 'react';
-import Title from '../Title/Title';
 import Screen from '../Screen/Screen';
 import Buttons from '../Buttons/Buttons';
-// import useMemory from '../../hooks/useMemory';
+import Message from '../Message/Message';
 
 function CalculatorBody() {
-  // const {saveIntoMemory, readMemory} = useMemory();
-  const [input, setInput] = useState('');
+  const [inputResult, setInputResult] = useState('');
   const [calculation, setCalculation] = useState('');
-  // const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('')
+  const [showMessage, setShowMessage] = useState(false);
 
   return (
     <div className='calculatorBody'>
-      <Title />
       <Screen
-        input={input}
+        inputResult={inputResult}
         calculation={calculation}
       />
+      <Message
+        message={message}
+        showMessage={showMessage}
+        />
       <Buttons
-        input={input}
-        setInput={setInput}
+        inputResult={inputResult}
+        calculation={calculation}
+        setInputResult={setInputResult}
         setCalculation={setCalculation}
+        setMessage={setMessage}
+        setShowMessage={setShowMessage}
       />
     </div>
   );

@@ -1,15 +1,13 @@
 import fs from 'fs';
 
-const saveCalculation = async calculation => {
+const saveCalculation = async requestBody => {
   try {
     const fileSetup = {
-      savedCalculation: calculation,
+      calculation: requestBody.calculation,
+      result: requestBody.result,
     };
     const data = JSON.stringify(fileSetup, null, 2);
-    fs.writeFile('memory.json', data, 'utf-8', error => {
-      if (error) throw error;
-      return true;
-    });
+    fs.writeFileSync('memory.json', data, 'utf-8');
     return true;
   } catch (error) {
     return false;

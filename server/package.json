@@ -7,9 +7,15 @@
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js",
     "dev": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
   },
+  "nodemonConfig": {
+    "ignore": [
+      "memory.json"
+    ]
+  },
   "author": "Peter Mozsi",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dayjs": "^1.11.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

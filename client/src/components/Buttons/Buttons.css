@@ -1,5 +1,5 @@
 .buttons {
-  margin-top: 5px;
+  height: 100%;
   box-sizing: border-box;
   display: grid;
   grid-template-rows: auto;
@@ -16,86 +16,160 @@
   border: 1px solid black;
   border-radius: 20px;
   cursor: pointer;
-  margin-inline: 2px;
-  margin-block: 2px;
+  margin-inline: 2%;
+  margin-block: 2%;
+  font-size: 200%;
+  font-weight: bold;
 }
 
 .one {
   grid-area: one;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .two {
   grid-area: two;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .three {
   grid-area: three;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .four {
   grid-area: four;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .five {
   grid-area: five;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .six {
   grid-area: six;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .seven {
   grid-area: seven;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .eight {
   grid-area: eight;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .nine {
   grid-area: nine;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .zeroButton {
   grid-area: zeroButton;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .point {
   grid-area: point;
+  background-color: #DBE2EF;
+  color: #112D4E;
 }
 
 .clear {
   grid-area: clear;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .plus {
   grid-area: plus;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .minus {
   grid-area: minus;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .multiplyButton {
   grid-area: multiplyButton;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .divide {
   grid-area: divide;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .equal {
   grid-area: equal;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .removeLast {
   grid-area: removeLast;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .save {
   grid-area: save;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
 }
 
 .read {
-  grid-area: read
+  grid-area: read;
+  background-color: hsl(213, 42%, 54%);
+  color: #DBE2EF;
+}
+
+.clear:hover,
+.divide:hover, 
+.equal:hover, 
+.minus:hover,
+.multiplyButton:hover,
+.plus:hover,
+.removeLast:hover,
+.save:hover,
+.read:hover {
+  background-color: hsl(213, 51%, 38%);
+  color: #F9F7F7;
+}
+
+.one:hover,
+.two:hover,
+.three:hover,
+.four:hover,
+.five:hover,
+.six:hover,
+.seven:hover,
+.eight:hover,
+.nine:hover,
+.point:hover,
+.zeroButton:hover {
+  background-color: #b8cbee;
+  color: hwb(213 19% 44%);
+}
+
+.buttons button:active {
+  transform: translateY(3px);
 }

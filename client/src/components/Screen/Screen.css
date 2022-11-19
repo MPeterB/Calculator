@@ -1,14 +1,30 @@
 .screen {
-  border: 1px solid black;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 90px;
+  background-color: #DBE2EF;
+  color: #112D4E;
+  overflow: hidden;
 }
 
 .screen div {
   display: inline-block;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding-inline: 20px;
+  font-family: sans-serif;
+  
+}
+
+.calculation {
+  height: 20px;
+  font-size: 20px;
+}
+
+.inputResult {
+  height: 50px;
+  font-size: 50px;
 }

@@ -1,7 +1,11 @@
 .calculatorBody {
-  border: 1px solid black;
   border-radius: 20px;
   width: 80%;
-  padding: 5px;
+  max-width: 500px;
+  height: 600px;
+  padding: 10px;
   box-sizing: border-box;
+  background-color: #112D4E;
+  display: flex;
+  flex-direction: column;
 }

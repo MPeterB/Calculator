@@ -1,5 +1,6 @@
 import './Buttons.css';
 import useButtons from '../../hooks/useButtons';
+import useMemory from '../../hooks/useMemory';
 
 function Buttons(props) {
   const {
@@ -10,7 +11,25 @@ function Buttons(props) {
     clear,
     remove,
     equal
-  } = useButtons(props.input, props.setInput, props.setCalculation);
+  } = useButtons(
+    props.inputResult,
+    props.setInputResult,
+    props.setCalculation,
+    props.setMessage,
+    props.setShowMessage,
+    );
+
+  const {
+    saveIntoMemory,
+    readMemory,
+  } = useMemory(
+    props.calculation,
+    props.setCalculation,
+    props.inputResult,
+    props.setInputResult,
+    props.setMessage,
+    props.setShowMessage,
+  );
 
   return (
     <div className='buttons'>
@@ -108,7 +127,7 @@ function Buttons(props) {
         value={'clear'}
         onClick={clear}
       >
-        clear
+        CA
       </button>
       <button
         className='plus'
@@ -156,19 +175,21 @@ function Buttons(props) {
         value={'removeLast'}
         onClick={remove}
       >
-        delete
+        DEL
       </button>
       <button
         className='save'
         type='button'
+        onClick={saveIntoMemory}
       >
-        save
+        M+
       </button>
       <button
         className='read'
         type='button'
+        onClick={readMemory}
       >
-        read
+        M
       </button>
     </div>
   );

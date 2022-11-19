@@ -1,93 +1,120 @@
-const useButtons = (input, setInput, setCalculation) => {
+const useButtons = (
+  inputResult,
+  setInputResult,
+  setCalculation,
+  setMessage,
+  setShowMessage
+) => {
   const numbers = e => {
     e.preventDefault();
+    setMessage('');
+    setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
-    if (input.slice(-1) === '0') {
-      if (operators.includes(input.slice(-2, -1)) || input.length === 1) {
-        const newString = input.split('').slice(0, -1).join('');
-        setInput(newString + e.target.value);
+    if (inputResult.slice(-1) === '0') {
+      if (
+        operators.includes(inputResult.slice(-2, -1)) ||
+        inputResult.length === 1
+      ) {
+        const newString = inputResult.split('').slice(0, -1).join('');
+        setInputResult(newString + e.target.value);
         return;
       }
-      setInput(input + e.target.value);
+      setInputResult(inputResult + e.target.value);
     }
-    setInput(input + e.target.value);
+    setInputResult(inputResult + e.target.value);
   };
 
   const zero = e => {
     e.preventDefault();
+    setMessage('');
+    setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
-    if (input.slice(-1) === '0') {
-      if (operators.includes(input.slice(-2, -1))) return;
-      if (input.length === 1) return;
-      setInput(input + e.target.value);
+    if (inputResult.slice(-1) === '0') {
+      if (operators.includes(inputResult.slice(-2, -1))) return;
+      if (inputResult.length === 1) return;
+      setInputResult(inputResult + e.target.value);
     }
-    setInput(input + e.target.value);
+    setInputResult(inputResult + e.target.value);
   };
 
   const point = e => {
     e.preventDefault();
+    setMessage('');
+    setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
-    if (input.length === 0) {
-      setInput('0' + e.target.value);
+    if (inputResult.length === 0) {
+      setInputResult('0' + e.target.value);
       return;
     }
-    if (input.slice(-1) === '.') return;
-    if (operators.includes(input.slice(-1))) {
-      setInput(input + '0' + e.target.value);
+    if (inputResult.slice(-1) === '.') return;
+    if (operators.includes(inputResult.slice(-1))) {
+      setInputResult(inputResult + '0' + e.target.value);
       return;
     }
     const lastOperatorIndex = indexOfOperator();
     const lastPointIndex = indexOfPoint();
     if (lastPointIndex > lastOperatorIndex) return;
-    setInput(input + e.target.value);
+    setInputResult(inputResult + e.target.value);
   };
 
   const operations = e => {
     e.preventDefault();
+    setMessage('');
+    setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
     const multDiv = ['*', '/'];
-    if (input.length === 0 && multDiv.includes(e.target.value)) {
-      setInput('0' + e.target.value);
+    if (inputResult.length === 0 && multDiv.includes(e.target.value)) {
+      setInputResult('0' + e.target.value);
       return;
     }
-    if ((input === '+' || input === '-') && multDiv.includes(e.target.value)) {
-      setInput('0' + e.target.value);
+    if (
+      (inputResult === '+' || inputResult === '-') &&
+      multDiv.includes(e.target.value)
+    ) {
+      setInputResult('0' + e.target.value);
       return;
     }
-    if (operators.includes(input.slice(-1))) {
-      const newString = input.split('').slice(0, -1).join('');
-      setInput(newString + e.target.value);
+    if (operators.includes(inputResult.slice(-1))) {
+      const newString = inputResult.split('').slice(0, -1).join('');
+      setInputResult(newString + e.target.value);
       return;
     }
-    setInput(input + e.target.value);
+    setInputResult(inputResult + e.target.value);
   };
 
   const clear = e => {
     e.preventDefault();
+    setMessage('');
+    setShowMessage(false);
     setCalculation('');
-    setInput('');
+    setInputResult('');
   };
 
   const remove = e => {
     e.preventDefault();
-    if (input.length === 0) return;
-    const newString = input.split('').slice(0, -1).join('');
-    setInput(newString);
+    setMessage('');
+    setShowMessage(false);
+    if (inputResult.length === 0) return;
+    const newString = inputResult.split('').slice(0, -1).join('');
+    setInputResult(newString);
   };
 
-  const equal = () => {
-    if (input.length === 0) return;
-    const mathOperation = eval(input);
+  const equal = e => {
+    e.preventDefault();
+    setMessage('');
+    setShowMessage(false);
+    if (inputResult.length === 0) return;
+    const mathOperation = eval(inputResult);
     if (mathOperation === Infinity || mathOperation === -Infinity) {
-      setInput('');
+      setInputResult('');
       return;
     }
-    setCalculation(input);
-    setInput(mathOperation.toString());
+    setCalculation(inputResult);
+    setInputResult(mathOperation.toString());
   };
 
   const indexOfOperator = () => {
-    const newArray = input.split('');
+    const newArray = inputResult.split('');
     const indexPlus = newArray.findLastIndex(element => element === '+');
     const indexMinus = newArray.findLastIndex(element => element === '-');
     const indexMultiply = newArray.findLastIndex(element => element === '*');
@@ -104,7 +131,7 @@ const useButtons = (input, setInput, setCalculation) => {
   };
 
   const indexOfPoint = () => {
-    const newArray = input.split('');
+    const newArray = inputResult.split('');
     const lastPointIndex = newArray.findLastIndex(element => element === '.');
 
     return lastPointIndex;
