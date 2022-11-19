@@ -11,7 +11,7 @@ const useMemory = (
     const url = `${process.env.REACT_APP_BACKEND_URL}/save`;
     const body = {
       calculation: calculation,
-      result: inputResult,
+      inputResult: inputResult,
     };
     const settings = {
       method: 'POST',
@@ -28,7 +28,7 @@ const useMemory = (
       setMessage(res.message);
       setShowMessage(true);
     } catch (error) {
-      setMessage('Something went wrong during save, try again later!');
+      setMessage('Something went wrong during save, try again!');
       setShowMessage(true);
     }
   };
@@ -48,7 +48,7 @@ const useMemory = (
       const req = await fetch(url, settings);
       const res = await req.json();
       setCalculation(res.calculation);
-      setInputResult(res.result);
+      setInputResult(res.inputResult);
       setMessage('Successful memory-reading!');
       setShowMessage(true);
     } catch (error) {

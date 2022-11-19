@@ -1,17 +1,17 @@
-import './CalculatorBody.css';
+import './Calculator.css';
 import {useState} from 'react';
 import Screen from '../Screen/Screen';
 import Buttons from '../Buttons/Buttons';
 import Message from '../Message/Message';
 
-function CalculatorBody() {
+function Calculator() {
   const [inputResult, setInputResult] = useState('');
   const [calculation, setCalculation] = useState('');
   const [message, setMessage] = useState('')
   const [showMessage, setShowMessage] = useState(false);
 
   return (
-    <div className='calculatorBody'>
+    <div className='calculator'>
       <Screen
         inputResult={inputResult}
         calculation={calculation}
@@ -32,4 +32,4 @@ function CalculatorBody() {
   );
 }
 
-export default CalculatorBody;
+export default Calculator;
