@@ -3,14 +3,7 @@ import fs from 'fs';
 const saveCalculation = async requestBody => {
   try {
     const dataToSave = setupDataToSave(requestBody);
-    console.log(dataToSave);
-    const fileSetup = {
-      calculation: dataToSave.calculation,
-      inputResult: dataToSave.inputResult,
-    };
-    console.log(fileSetup);
-    const data = JSON.stringify(fileSetup, null, 2);
-    console.log(data);
+    const data = JSON.stringify(dataToSave, null, 2);
     fs.writeFileSync('memory.json', data, 'utf-8');
     return true;
   } catch (error) {
@@ -21,7 +14,7 @@ const saveCalculation = async requestBody => {
 const setupDataToSave = requestBody => {
   const dataToSave = {};
   if (requestBody.calculation) dataToSave.calculation = requestBody.calculation;
-  dataToSave.inputResult = requestBody.inputResult;
+  if (requestBody.inputResult) dataToSave.inputResult = requestBody.inputResult;
   return dataToSave;
 };
 

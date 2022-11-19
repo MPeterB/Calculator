@@ -2,12 +2,11 @@ import saveService from '../../services/saveService';
 
 const post = async (req, res) => {
   try {
-    const result = await saveService.saveCalculation({ ...req.body });
     if (!req.body.inputResult)
-      res.status(400).json({
-        message:
-          'Calculation is not necessary, but you have to provide inputResult to be able to save!',
+      return res.status(400).json({
+        message: `You can't save, type something!`,
       });
+    const result = await saveService.saveCalculation({ ...req.body });
     if (result)
       res.status(200).json({ message: 'Successful save into memory!' });
   } catch (error) {

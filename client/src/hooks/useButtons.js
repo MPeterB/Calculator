@@ -103,14 +103,41 @@ const useButtons = (
     e.preventDefault();
     setMessage('');
     setShowMessage(false);
-    if (inputResult.length === 0) return;
-    const mathOperation = eval(inputResult);
-    if (mathOperation === Infinity || mathOperation === -Infinity) {
-      setInputResult('');
+    let newString;
+    const operators = ['+', '-', '*', '/'];
+    if (inputResult.length === 0) {
+      setMessage('You did not write any number!');
+      setShowMessage(true);
       return;
     }
-    setCalculation(inputResult);
-    setInputResult(mathOperation.toString());
+    if (operators.includes(inputResult.slice(-1))) {
+      setMessage(`Operator can't be the last character!`);
+      setShowMessage(true);
+      return;
+    }
+    const mathOperation = eval(inputResult);
+    if (mathOperation === Infinity || mathOperation === -Infinity) {
+      setInputResult(inputResult.toString());
+      setMessage('You can not devide with 0!');
+      setShowMessage(true);
+      return;
+    }
+    if (-999999999 > mathOperation || mathOperation > 9999999999) {
+      setInputResult(inputResult.toString());
+      setMessage('This would be too big to show!');
+      setShowMessage(true);
+      return;
+    }
+    if (inputResult.slice(-1) === '.') {
+      newString = inputResult.split('').slice(0, -1).join('');
+      setCalculation(newString);
+    }
+    if (newString) {
+      setCalculation(newString);
+    } else {
+      setCalculation(inputResult);
+    }
+    setInputResult(roundIfNecessary(mathOperation).toString());
   };
 
   const indexOfOperator = () => {
@@ -135,6 +162,11 @@ const useButtons = (
     const lastPointIndex = newArray.findLastIndex(element => element === '.');
 
     return lastPointIndex;
+  };
+
+  const roundIfNecessary = number => {
+    const roundedNumber = Math.round(number * 100) / 100;
+    return roundedNumber;
   };
 
   return {

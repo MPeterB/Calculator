@@ -8,4 +8,5 @@
   background-color: #112D4E;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
