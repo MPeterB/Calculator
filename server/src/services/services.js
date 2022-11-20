@@ -1,4 +1,4 @@
-import saveService from './saveService';
-import readService from './readService';
+import memoryService from './memoryService';
+import validationService from './validationService';
 
-export { saveService, readService };
+export { memoryService, validationService };

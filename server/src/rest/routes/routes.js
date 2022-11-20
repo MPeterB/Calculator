@@ -1,11 +1,9 @@
 import express from 'express';
 const router = express.Router();
 import baseRouter from './baseRouter';
-import saveRouter from './saveRouter';
-import readRouter from './readRouter';
+import memoryRouter from './memoryRouter';
 
 router.use(baseRouter);
-router.use(saveRouter);
-router.use(readRouter);
+router.use(memoryRouter);
 
 export default router;

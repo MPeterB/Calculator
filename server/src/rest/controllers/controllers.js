@@ -1,5 +1,4 @@
 import baseController from './baseController';
-import saveController from './saveController';
-import readController from './readController';
+import memoryController from './memoryController';
 
-export { baseController, saveController, readController };
+export { baseController, memoryController };
