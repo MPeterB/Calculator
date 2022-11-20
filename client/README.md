@@ -1,3 +1,17 @@
-This is the client side of the Calculator application.
+## This is the client-side of the Calculator application
 
-Work in progress!
+<br/>
+
+### Steps to start the application
+
+- Install node modules
+
+```
+npm i
+```
+
+- Start the server
+
+```
+npm start
+```
