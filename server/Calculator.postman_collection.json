@@ -1,0 +1,64 @@
+{
+  "info": {
+    "_postman_id": "61848a87-59eb-4eb9-9ee9-232dbe48f386",
+    "name": "Calculator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20908835"
+  },
+  "item": [
+    {
+      "name": "baseRouter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "saveRouter",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"calculation\": \"3*5\",\r\n    \"inputResult\": \"15\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/save",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["save"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "readRouter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/read",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["read"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
