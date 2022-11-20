@@ -10,6 +10,8 @@ const useButtons = (
     setMessage('');
     setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
+    // change 0 to other number if before the zero there is an operator
+    // and change 0 to other number if 0 is the only character in input
     if (inputResult.slice(-1) === '0') {
       if (
         operators.includes(inputResult.slice(-2, -1)) ||
@@ -29,6 +31,7 @@ const useButtons = (
     setMessage('');
     setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
+    // prevent multiple zeroes at the beginning of a number
     if (inputResult.slice(-1) === '0') {
       if (operators.includes(inputResult.slice(-2, -1))) return;
       if (inputResult.length === 1) return;
@@ -42,15 +45,19 @@ const useButtons = (
     setMessage('');
     setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
+    // if first pressed character is '.' change it into '0.'
     if (inputResult.length === 0) {
       setInputResult('0' + e.target.value);
       return;
     }
+    // prevent multiple '.' after one an other
     if (inputResult.slice(-1) === '.') return;
+    // if '.' pressed after an operator change it into '0.'
     if (operators.includes(inputResult.slice(-1))) {
       setInputResult(inputResult + '0' + e.target.value);
       return;
     }
+    // prevent multiple '.' inside one number
     const lastOperatorIndex = indexOfOperator();
     const lastPointIndex = indexOfPoint();
     if (lastPointIndex > lastOperatorIndex) return;
@@ -63,10 +70,13 @@ const useButtons = (
     setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
     const multDiv = ['*', '/'];
+    // prevent '*' and '/' at the beginning
     if (inputResult.length === 0 && multDiv.includes(e.target.value)) {
       setInputResult('0' + e.target.value);
       return;
     }
+    // if input contains only '+' or '-' and '/' or '*' pressed,
+    // then the operator changes into '0*' or '0/' respectively
     if (
       (inputResult === '+' || inputResult === '-') &&
       multDiv.includes(e.target.value)
@@ -74,6 +84,7 @@ const useButtons = (
       setInputResult('0' + e.target.value);
       return;
     }
+    // prevent multiple operators after one an other
     if (operators.includes(inputResult.slice(-1))) {
       const newString = inputResult.split('').slice(0, -1).join('');
       setInputResult(newString + e.target.value);
@@ -129,6 +140,7 @@ const useButtons = (
       return;
     }
     if (inputResult.slice(-1) === '.') {
+      // if last character '.', delete that
       newString = inputResult.split('').slice(0, -1).join('');
       setCalculation(newString);
     }
