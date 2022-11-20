@@ -25,7 +25,7 @@ const validateCalculation = requestBody => {
   if (!/^[0-9+\-*/.]+$/.test(requestBody.calculation)) return false;
   // number at the end
   if (!/^[0-9]$/.test(requestBody.calculation.slice(-1))) return false;
-  // no operator and . at the beginning, except + and -
+  // no operator and . at the beginning, except '+' and '-'
   if (/^[/*.]$/.test(requestBody.calculation[0])) return false;
   // no multiple operators or '.' after one an other
   for (let i = 1; i <= requestBody.calculation.length; i++) {
