@@ -10,7 +10,7 @@ const useButtons = (
     setMessage('');
     setShowMessage(false);
     const operators = ['+', '-', '*', '/'];
-    // change 0 to other number if before the zero there is an operator
+    // Change 0 to other number if before the zero there is an operator
     // and change 0 to other number if 0 is the only character in input
     if (inputResult.slice(-1) === '0') {
       if (
