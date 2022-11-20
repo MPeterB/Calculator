@@ -1,4 +1,5 @@
 import './Buttons.css';
+import Button from '../Button/Button';
 import useButtons from '../../hooks/useButtons';
 import useMemory from '../../hooks/useMemory';
 
@@ -33,164 +34,26 @@ function Buttons(props) {
 
   return (
     <div className='buttons'>
-      <button
-        className='one'
-        type='button'
-        value={'1'}
-        onClick={numbers}
-      >
-        1
-      </button>
-      <button
-        className='two'
-        type='button'
-        value={'2'}
-        onClick={numbers}
-      >
-        2
-      </button>
-      <button
-        className='three'
-        type='button'
-        value={'3'}
-        onClick={numbers}
-      >
-        3
-      </button>
-      <button
-        className='four'
-        type='button'
-        value={'4'}
-        onClick={numbers}
-      >
-        4
-      </button>
-      <button
-        className='five'
-        type='button'
-        value={'5'}
-        onClick={numbers}
-      >
-        5
-      </button>
-      <button
-        className='six'
-        type='button'
-        value={'6'}
-        onClick={numbers}
-      >
-        6
-      </button>
-      <button
-        className='seven'
-        type='button'
-        value={'7'}
-        onClick={numbers}
-      >
-        7
-      </button>
-      <button
-        className='eight'
-        type='button'
-        value={'8'}
-        onClick={numbers}
-      >
-        8
-      </button>
-      <button
-        className='nine'
-        type='button'
-        value={'9'}
-        onClick={numbers}
-      >
-        9
-      </button>
-      <button
-        className='zeroButton'
-        type='button'
-        value={'0'}
-        onClick={zero}
-      >
-        0
-      </button>
-      <button
-        className='point'
-        type='button'
-        value={'.'}
-        onClick={point}
-      >
-        .
-      </button>
-      <button
-        className='clear'
-        type='button'
-        value={'clear'}
-        onClick={clear}
-      >
-        CA
-      </button>
-      <button
-        className='plus'
-        type='button'
-        value={'+'}
-        onClick={operations}
-      >
-        +
-      </button>
-      <button
-        className='minus'
-        type='button'
-        value={'-'}
-        onClick={operations}
-      >
-        -
-      </button>
-      <button
-        className='multiplyButton'
-        type='button'
-        value={'*'}
-        onClick={operations}
-      >
-        x
-      </button>
-      <button
-        className='divide'
-        type='button'
-        value={'/'}
-        onClick={operations}
-      >
-        /
-      </button>
-      <button
-        className='equal'
-        type='button'
-        value={'='}
-        onClick={equal}
-      >
-        =
-      </button>
-      <button
-        className='removeLast'
-        type='button'
-        value={'removeLast'}
-        onClick={remove}
-      >
-        DEL
-      </button>
-      <button
-        className='save'
-        type='button'
-        onClick={saveIntoMemory}
-      >
-        M+
-      </button>
-      <button
-        className='read'
-        type='button'
-        onClick={readMemory}
-      >
-        M
-      </button>
+      <Button className={'one'} value={'1'} onClick={numbers} show={'1'}/>
+      <Button className={'two'} value={'2'} onClick={numbers} show={'2'}/>
+      <Button className={'three'} value={'3'} onClick={numbers} show={'3'}/>
+      <Button className={'four'} value={'4'} onClick={numbers} show={'4'}/>
+      <Button className={'five'} value={'5'} onClick={numbers} show={'5'}/>
+      <Button className={'six'} value={'6'} onClick={numbers} show={'6'}/>
+      <Button className={'seven'} value={'7'} onClick={numbers} show={'7'}/>
+      <Button className={'eight'} value={'8'} onClick={numbers} show={'8'}/>
+      <Button className={'nine'} value={'9'} onClick={numbers} show={'9'}/>
+      <Button className={'zeroButton'} value={'0'} onClick={zero} show={'0'}/>
+      <Button className={'point'} value={'.'} onClick={point} show={'.'}/>
+      <Button className={'clear'} value={'clear'} onClick={clear} show={'CA'}/>
+      <Button className={'plus'} value={'+'} onClick={operations} show={'+'}/>
+      <Button className={'minus'} value={'-'} onClick={operations} show={'-'}/>
+      <Button className={'multiplyButton'} value={'*'} onClick={operations} show={'x'}/>
+      <Button className={'divide'} value={'/'} onClick={operations} show={'/'}/>
+      <Button className={'equal'} value={'='} onClick={equal} show={'='}/>
+      <Button className={'removeLast'} value={'removeLast'} onClick={remove} show={'DEL'}/>
+      <Button className={'save'} value={'save'} onClick={saveIntoMemory} show={'M+'}/>
+      <Button className={'read'} value={'read'} onClick={readMemory} show={'M'}/>
     </div>
   );
 }
