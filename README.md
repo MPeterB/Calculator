@@ -1,3 +1,17 @@
-This is the readme file of the calculator application as a whole.
+# Calculator application
 
-Work in progress!
+## Technologies
+
+- React
+- ExpressJS
+- NodeJS
+- Eslint
+
+## Functionality
+
+- Working range from -9,999,999,999 to +9,999,999,999
+- Basic mathematical operations
+- Clear the input
+- Delete last number
+- Save into memory
+- Read from memory
