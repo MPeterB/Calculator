@@ -1,3 +1,18 @@
-This is the readme file of the calculator's serrverv side
+## This is the server-side of the Calculator application
 
-Work in progress!
+<br/>
+
+### Steps to start the application
+
+- Install node modules
+
+```
+npm i
+```
+
+- Set up own .env file based on .env.examle
+- Start the server
+
+```
+npm start
+```
